@@ -3953,17 +3953,14 @@ input:checked + .toggleSwitchSlider:before {
     z-index: 400;
 }
 
-/* Rotating animation for the spinner. */
-@keyframes rotating {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+
+@keyframes breath{
+    0%{transform: scale(.7);}
+    25%{transform: scale(1);}
+    60%{transform: scale(.7);}
+    100%{transform: scale(1);}
 }
 
-/* Class which is applied when the spinner image is spinning. */
-.rotating {
-    animation: rotating 10s linear infinite;
+.breath {
+    animation: breath 3s linear infinite;
 }
