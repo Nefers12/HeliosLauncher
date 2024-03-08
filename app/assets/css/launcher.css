@@ -3420,14 +3420,19 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Launch details main container, hidden until launch processing begins. */
 #launch_details {
+    flex-direction: column;
     position: relative;
-    top: 25px;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
     display: none;
 }
  
 /* Left side of launch details container, displays percentage and a divider. */
 #launch_details_left {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Span which displays percentage complete. */
@@ -3439,6 +3444,7 @@ input:checked + .toggleSwitchSlider:before {
     min-width: 53.21px;
     max-width: 53.21px;
     text-align: right;
+    margin-left: 165px;
 }
 
 /* Right side of launch details container, displays progress bar and details. */
@@ -3469,7 +3475,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Progress bar styles. */
 #launch_progress[value] {
-    height: 3px;
+    height: 10px;
     width: 265px;
     -webkit-appearance: none;
 }

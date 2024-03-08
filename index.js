@@ -2,7 +2,7 @@ const remoteMain = require('@electron/remote/main')
 remoteMain.initialize()
 
 // Requirements
-const { app, BrowserWindow, ipcMain, Menu, shell } = require('electron')
+const { app, BrowserWindow, ipcMain, Menu, shell, globalShortcut } = require('electron')
 const autoUpdater                       = require('electron-updater').autoUpdater
 const ejse                              = require('ejs-electron')
 const fs                                = require('fs')
@@ -343,6 +343,12 @@ function getPlatformIcon(filename){
 
 app.on('ready', createWindow)
 app.on('ready', createMenu)
+
+app.on('ready', () => {
+    globalShortcut.register('Control+Shift+I', () => {
+        return false;
+    })
+})
 
 app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar

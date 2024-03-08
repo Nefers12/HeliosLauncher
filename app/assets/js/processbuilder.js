@@ -94,6 +94,7 @@ class ProcessBuilder {
         })
         child.on('close', (code, signal) => {
             logger.info('Exited with code', code)
+            let window = remote.getCurrentWindow()
             fs.remove(tempNativePath, (err) => {
                 if(err){
                     logger.warn('Error while deleting temp dir', err)
@@ -101,6 +102,11 @@ class ProcessBuilder {
                     logger.info('Temp dir deleted successfully.')
                 }
             })
+            if(code == 0){
+                window.close()
+            } else {
+                window.show()
+            }
         })
 
         return child

@@ -59,6 +59,8 @@ function toggleLaunchArea(loading){
         launch_details.style.display = 'none'
         launch_button.removeAttribute('disabled')
         launch_button.textContent = 'JOUER'
+        let window = remote.getCurrentWindow()
+        window.hide()
     }
 }
 
